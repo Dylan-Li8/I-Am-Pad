@@ -2,6 +2,9 @@
 <resources>
     <string-array name="module_scope">
         <item>com.tencent.mm</item>
+        <item>com.tencent.mn</item>
+        <item>com.tencent.mn1</item>
+        <item>com.tencent.mn2</item>
         <item>com.tencent.mobileqq</item>
         <item>com.tencent.wework</item>
     </string-array>
