@@ -45,22 +45,18 @@ object HookEntrance : IYukiHookXposedInit {
     }
 
     private fun PackageParam.processWeChat() {
-    loadAppIfMatches("com.tencent.m") {
-        simulateTabletModel("samsung", "SM-F9560")
-
-        withProcess(mainProcessName) {
-            dataChannel.wait(ClearCacheKey) {
-                YLog.info("Clear WeChat cache")
-                File(appInfo.dataDir, ".auth_cache").deleteRecursively()
-                Process.killProcess(Process.myPid())
+        loadApp { packageName ->
+            if (packageName.startsWith(WECHAT_PACKAGE_NAME)) {
+                simulateTabletModel("samsung", "SM-F9560")
+    
+                withProcess(mainProcessName) {
+                    dataChannel.wait(ClearCacheKey) {
+                        YLog.info("Clear WeChat cache")
+                        File(appInfo.dataDir, ".auth_cache").deleteRecursively()
+                        Process.killProcess(Process.myPid())
+                    }
+                }
             }
-        }
-    }
-}
-
-    private fun loadAppIfMatches(prefix: String, action: () -> Unit) {
-        if (appInfo.packageName.startsWith(prefix)) {
-            action()
         }
     }
 
