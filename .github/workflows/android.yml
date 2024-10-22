@@ -5,6 +5,7 @@ on:
     branches:
       - main  # 触发编译的分支，可以根据需要调整
   pull_request:
+  workflow_dispatch:  # 添加手动触发的事件
 
 jobs:
   build:
