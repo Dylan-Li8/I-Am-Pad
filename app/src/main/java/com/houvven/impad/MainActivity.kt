@@ -72,10 +72,10 @@ private fun App(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(16.dp)
             )
         }
-        listOf(QQ_PACKAGE_NAME, WECHAT_PACKAGE_NAME).forEach { packageName ->
+        listOf(QQ_PACKAGE_NAME, WECHAT_PACKAGE_NAME,"com.tencent.mn","com.tencent.mn1","com.tencent.mn2").forEach { packageName ->
             AppCard(packageName) {
                 context.dataChannel(packageName).put(ClearCacheKey)
-            }
+            }}
         }
     }
 }
