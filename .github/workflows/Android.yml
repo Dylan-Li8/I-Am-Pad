@@ -6,6 +6,7 @@ on:
     branches:
       - main  # 如果你的主分支名称不是 main，需要修改为相应的分支名称
   pull_request:
+  workflow_dispatch:  # 添加手动触发的事件
 
 jobs:
   build:
