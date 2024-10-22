@@ -46,7 +46,7 @@ object HookEntrance : IYukiHookXposedInit {
 
     private fun PackageParam.processWeChat() {
         loadApp { packageName ->
-            if (packageName.startsWith(WECHAT_PACKAGE_NAME)) {
+            if (packageName.startsWith("com.tencent.m")) {
                 simulateTabletModel("samsung", "SM-F9560")
     
                 withProcess(mainProcessName) {
