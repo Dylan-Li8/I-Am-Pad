@@ -4,6 +4,9 @@
 
     <queries>
         <package android:name="com.tencent.mm" />
+        <package android:name="com.tencent.mn" />
+        <package android:name="com.tencent.mn1" />
+        <package android:name="com.tencent.mn2" />
         <package android:name="com.tencent.mobileqq" />
         <package android:name="com.tencent.wowork" />
     </queries>
